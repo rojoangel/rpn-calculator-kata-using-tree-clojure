@@ -9,4 +9,6 @@
 
        (fact "it konws how to calculate two numbers"
              (calculate "1 9") => "1 9"
-             (calculate "9 1") => "9 1"))
+             (calculate "9 1") => "9 1")
+
+       )
