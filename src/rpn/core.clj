@@ -5,11 +5,12 @@
   (reverse (cons n (reverse tree))))
 
 (defn- store [tree symbol ]
-  (store-number tree symbol))
+  (if (number? symbol)
+    (store-number tree symbol)))
 
 (defn calculate [operation]
   (let [tokens (str/split (str/trim operation) #"\s+")
         symbols (map read-string tokens)]
     (str/join
     " "
-    (reduce store nil tokens))))
+    (reduce store nil symbols))))
