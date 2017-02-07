@@ -4,5 +4,9 @@
 
 (facts "about calculations in rpn"
        (fact "it konws how to calculate a number"
-             (calculate "1") => 1
-             (calculate "9") => 9))
+             (calculate "1") => "1"
+             (calculate "9") => "9")
+
+       (fact "it konws how to calculate two numbers"
+             (calculate "1 9") => "1 9"
+             (calculate "9 1") => "9 1"))
