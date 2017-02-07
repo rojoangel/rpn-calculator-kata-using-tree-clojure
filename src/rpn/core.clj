@@ -1,4 +1,4 @@
 (ns rpn.core)
 
 (defn calculate [operation]
-  1)
+  (read-string operation))
