@@ -22,9 +22,10 @@
      (cons (eval (first tree)) (rest tree))
      tree))
 
+(defn- format [tree]
+  (str/join " " tree))
+
 (defn calculate [operation]
   (let [tokens (str/split (str/trim operation) #"\s+")
         symbols (map read-string tokens)]
-    (str/join
-    " "
-    (walk (reduce store nil symbols)))))
+    (format (walk (reduce store nil symbols)))))
