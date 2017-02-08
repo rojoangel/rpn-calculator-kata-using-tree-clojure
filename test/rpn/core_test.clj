@@ -15,4 +15,9 @@
              (calculate "1 9 +") => "10"
              (calculate "9 1 -") => "8"
              (calculate "3 4 *") => "12"
-             (calculate "20 4 /") => "5"))
+             (calculate "20 4 /") => "5")
+
+       (fact "it works for the examples"
+             (calculate "4 2 + 3 -") => "3"
+             (calculate "3 5 8 * 7 + *") => "141"
+             (calculate "7 2 - 3 4") => "5 3 4"))
