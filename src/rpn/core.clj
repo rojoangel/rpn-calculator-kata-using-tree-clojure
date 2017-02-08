@@ -17,7 +17,7 @@
     (store-number tree symbol)
     (store-operation tree symbol)))
 
-(defn walk [tree]
+(defn- walk [tree]
   (if (seq? (first tree))  ;; then, the first item is an operation
      (cons (eval (first tree)) (rest tree))
      tree))
