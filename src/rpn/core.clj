@@ -4,9 +4,18 @@
 (defn- store-number [tree n]
   (reverse (cons n (reverse tree))))
 
+(defn- store-operation [tree op]
+  (let [fn (resolve op)]
+    (reverse
+    (cons
+      (cons fn (take-last 2 tree))
+      (reverse
+        (drop-last 2 tree))))))
+
 (defn- store [tree symbol ]
   (if (number? symbol)
-    (store-number tree symbol)))
+    (store-number tree symbol)
+    (store-operation tree symbol)))
 
 (defn calculate [operation]
   (let [tokens (str/split (str/trim operation) #"\s+")
