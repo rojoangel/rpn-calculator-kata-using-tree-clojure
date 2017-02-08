@@ -17,9 +17,14 @@
     (store-number tree symbol)
     (store-operation tree symbol)))
 
+(defn walk [tree]
+  (if (seq? (first tree))  ;; then, the first item is an operation
+     (cons (eval (first tree)) (rest tree))
+     tree))
+
 (defn calculate [operation]
   (let [tokens (str/split (str/trim operation) #"\s+")
         symbols (map read-string tokens)]
     (str/join
     " "
-    (reduce store nil symbols))))
+    (walk (reduce store nil symbols)))))

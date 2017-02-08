@@ -11,4 +11,5 @@
              (calculate "1 9") => "1 9"
              (calculate "9 1") => "9 1")
 
-       )
+       (fact "it konws how to calculate sum two numbers"
+             (calculate "1 9 +") => "10"))
