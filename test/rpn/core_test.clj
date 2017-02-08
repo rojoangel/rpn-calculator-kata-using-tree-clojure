@@ -11,5 +11,8 @@
              (calculate "1 9") => "1 9"
              (calculate "9 1") => "9 1")
 
-       (fact "it konws how to calculate sum two numbers"
-             (calculate "1 9 +") => "10"))
+       (fact "it konws how to operate two numbers"
+             (calculate "1 9 +") => "10"
+             (calculate "9 1 -") => "8"
+             (calculate "3 4 *") => "12"
+             (calculate "20 4 /") => "5"))
