@@ -18,7 +18,9 @@
 
 (defn- walk [branch]
   (if (seq? branch)
-    (eval (list (resolve (first branch)) (nth branch 1) (nth branch 2)))
+    (eval (list (resolve (first branch))
+                (walk (nth branch 1))
+                (walk (nth branch 2))))
     branch))
 
 (defn- format [tree]
