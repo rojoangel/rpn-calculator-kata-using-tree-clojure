@@ -1,5 +1,7 @@
 # Reverse Polish Notation Calculator Kata
 
+## The problem
+
 A RPN calculator program computes expressions written in RPN (Reverse Polish Notation).
 A RPN expression (or a postfix expression) is one of the following:
 
@@ -18,6 +20,11 @@ Suggested scenarios
 - Given a RPN Calculator when a digit is sent it should display the same digit
 - Given a RPN Calculator when some digits are sent it should display the number formed by those digits
 - Given a RPN Calculator when an operation (* + / -) is sent after two numbers it should display the result of that operation
+
+## The solution
+
+This solution uses a tree to store operations in RPN and then walk the tree
+to evaluate the resulting expression.
 
 ## How to run the tests
 
